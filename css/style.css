@@ -1,0 +1,185 @@
+body {
+  font-size: 14px;
+}
+.wrapper {
+  height: 100vh; /*prend toute la hauteur de la fenêtre*/
+  width: 100vw;
+  display: flex;
+}
+
+
+
+.panel {
+  width: 50%;
+}
+
+#left-panel {
+  background-image: url(../images/nicole.jpg);
+  background-size: cover;
+  background-position: 0 50%;
+  color: white;
+  position: relative;
+}
+
+#right-panel {
+}
+
+header {
+  margin-top: 2rem;
+  margin-left: 1rem;
+  display: flex;
+  align-items: flex-start;
+  text-transform: uppercase;
+  line-height: 1.4rem;;
+}
+
+.logo {
+  width: 50px;
+  margin-right: 1rem;
+}
+
+
+/*=================================================
+la solution float left ne correspond pas à ce qui est demandé dans la maquette
+h1 {
+  
+}
+
+.logo {
+  width: 50px;
+  float: left;
+  margin-right: 1rem;
+}
+=================================================*/
+
+
+/*BEM : Block__Element--Modifier ; ici il n'y a pas de modifier*/
+.left-panel__article {
+  background-color: rgba(255,255,255, 0.2);
+  position: absolute;
+  top: 50%;
+  width: 80%;
+  right: 0;
+  padding: 1rem;
+  text-align: right;
+  /*STEP Rendre l'arrière plan flou*/
+  backdrop-filter: blur(5px);
+}
+
+
+
+/*Démo position absolute=============================
+
+#demo {
+  position: absolute;
+  top: 100px;
+  right: 200px;
+  background-color: #f0f;
+}
+===============================*/
+
+.left-panel__footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%
+}
+
+
+.footer__nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin-bottom: 0.5rem;
+}
+
+.footer__nav ul li a {
+  color: white;
+  padding: 0 0.5rem;
+}
+
+
+
+/*STEP Panneau de droite*/
+/*=========================================================*/
+/*=========Panneau de droite===============================*/
+#right-panel {
+  display:flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+#right-panel h2 {
+  padding: 16px;
+  background-color: #ccc;
+}
+
+#right-panel .articles {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.articles__article {
+  box-sizing: border-box;
+  outline: solid 1px #ccc;
+  width: 50%;
+  padding: 16px;
+
+  /*
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  */
+
+}
+
+.articles__article header {
+  display:block;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+.articles__article header a {
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  width: min-content;
+}
+
+.article__badge--team {
+  background-color: #98dc62;
+}
+
+.article__badge--news {
+  background-color: #dc5e53;
+
+}
+
+
+.meta__avatar {
+  height: 30px;
+}
+
+.meta-author {
+  font-weight: bold;
+}
+
+.meta-date {
+  color: #aaa;
+}
+
+.post-read {
+  text-decoration: underline;
+}
+
+/*STEP opérateur css tous les enfants direct + selecteur "tous les éléments"*/
+.articles__article > * {
+  margin-bottom: 16px; 
+}
+
+
+.articles__article header > * {
+  margin-bottom: 16px;
+}
